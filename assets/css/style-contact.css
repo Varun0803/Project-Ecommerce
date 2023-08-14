@@ -1,0 +1,13 @@
+main {
+    margin-top: 40px;
+    padding: 20px;
+}
+main h1 {
+    margin: 0;
+    text-align: center;
+}
+form p{
+    width: 58%;
+    margin: 20px;
+    text-align: end;
+}

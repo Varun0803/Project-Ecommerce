@@ -1,0 +1,81 @@
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+}
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #7391c0;
+        z-index: 9;
+    }
+
+    .nav {
+        padding: 10px 10vw;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav h1 {
+        height: 60px;
+        padding-top: 15px;
+    }
+    .nav-items {
+        display: flex;
+        align-items: center;
+    }
+    /* .nav-items a{
+    margin-left: 20px;
+}
+
+.nav-items a img{
+    width: 30px;
+} */
+    .links-container {
+        width: 100%;
+        display: flex;
+        padding: 10px 6vw;
+        justify-content: end;
+        list-style: none;
+        margin-right: 50px;
+    }
+
+    .link {
+        text-transform: capitalize;
+        text-decoration: none;
+        padding: 0 10px;
+        margin: 0 5px;
+        color: #000;
+    }
+    .logout{
+        border: 1px solid black;
+        padding: 5px 15px;
+        text-decoration: none;
+        color: #000;
+        background: #fff;
+        border-radius: 15px;
+    }
+</style>
+<nav class="navbar">
+    <div class="nav">
+        <h1>E-commerce Website</h1>
+        <div class="nav-items">
+            <ul class="links-container">
+                <li class="link-item"><a href="/" class="link">Home</a></li>
+                <li class="link-item"><a href="/changepass" class="link">Change Password</a></li>
+                <li class="link-item"><a href="/contact" class="link">Contact us</a></li>
+            </ul>
+            <% if(username){ %>
+                <p style="width: 150px;">Hi <%= username %></p>
+            <% } %>
+            <a href="/logout" class="logout">Logout</a>
+            <!-- <a href="#"><img src="img/user.png" alt=""></a>
+            <a href="#"><img src="img/cart.png" alt=""></a> -->
+        </div>
+    </div>
+</nav>

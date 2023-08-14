@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Products</title>
+    <style>
+        main {
+    margin-top: 40px;
+    padding: 20px;
+}
+main h1 {
+    margin: 0;
+    text-align: center;
+}
+form{
+    margin: 0 40%;
+}
+form p{
+    width: 130%;
+    margin: 20px;
+    text-align: start;
+}
+
+textarea{
+    resize: none;
+}
+    </style>
+</head>
+
+<body>
+    <%- include('header-admin',{username:username}) %>
+        <main>
+            <h1>Add product details</h1>
+            <form action="/add-product" method="POST" enctype="multipart/form-data">
+                <p><label>Product Name : <input type="text" name="productName" placeholder="Product name" required /></label></p>
+                <p><label>Product Price : <input type="number" name="productPrice" placeholder="Price of product" required /></label></p>
+                <p><label>Quantity : <input type="number" name="quantity" placeholder="Quantity" required /></label></p>
+                <p><label>Product Description : <input type="text" name="productDesc" placeholder="Product Description" required /></label></p>
+                <p><label>Product Image : <input type="file" name="productImage" accept="image/*" required /></label></p>
+                <p><button type="submit">Add</button></p>
+                <% if(error) { %>
+                    <p style="color: tomato;"><%= error %></p>
+                <% } %>
+            </form>
+        </main>
+    <%- include('footer') %>
+    <p>
+        <label>Old Password : <input type="password" name="oldpass" required /></label>
+    </p>
+</body>
+
+</html>

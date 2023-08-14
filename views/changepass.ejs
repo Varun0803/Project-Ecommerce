@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<link rel="stylesheet" href="css/style-contact.css">
+</head>
+<body>
+	<%- include('header-dashboard',{username:username}) %>
+
+	<main>
+		<h1>Change Password</h1>
+        <form action="/changepass" method="post">
+ 
+            <p>
+                <label>Old Password : <input type="password" name="oldpass" required /></label>
+            </p>
+     
+            <p>
+                <label>New Password : <input type="password" name="newpass" required/></label>
+            </p>
+            <p>
+                <label>Confirm Password : <input type="password" name="confirmpass" required/></label>
+            </p>
+
+            <% if(message){ %>
+                <p style="color: red;"><%= message %></p>
+            <% } %>
+            <p>
+                <button type="submit">Submit</button>
+            </p>
+        </form>
+	</main>
+    <%- include('footer') %>
+
+</body>
+</html>
